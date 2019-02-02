@@ -5,27 +5,27 @@ const tasksCommands = require('./tasks.commands');
 tasksCommands.forEach(command => yargs.command(command));
 
 yargs.help()
-    .group('description', 'create')
+    .group('description', `'create' options`)
     .describe('description', 'Sets description of task')
-    .group('group', 'create')
+    .group('group', `'create' options`)
     .describe('group', 'Sets group of task')
 
-    .group('complete', 'read')
+    .group('complete', `'read' options`)
     .describe('complete', 'Returns filtered true/false complete tasks')
-    .group('group', 'read')
+    .group('group', `'read' options`)
     .describe('group', 'Returns filtered tasks by group')
 
-    .group('id', 'update')
+    .group('id', `'update' options`)
     .describe('id', 'id of updating task')
-    .group('description', 'update')
+    .group('description', `'update' options`)
     .describe('description', 'Sets description of task')
-    .group('complete', 'update')
+    .group('complete', `'update' options`)
     .describe('complete', 'Sets completion of task')
-    .group('group', 'update')
+    .group('group', `'update' options`)
     .describe('group', 'Sets group of task')
 
-    .group('id', 'delete')
+    .group('id', `'delete' options`)
     .describe('id', 'Id of deleting task')
 
     .wrap(null)
-    .argv
+    .argv;
