@@ -3,11 +3,6 @@ const {createTask, readTasks, updateTask, deleteTask} = require('./tasks.service
 const createTaskCommand = {
     command: 'create',
     describe: 'Creates new task',
-    function (yargs) {
-        return yargs.option('b', {
-            alias: 'bar'
-        })
-    },
     handler: async args => {
         try {
             await createTask(args.description, args.group);
